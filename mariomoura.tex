@@ -1,0 +1,352 @@
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
+\usepackage{enumitem}
+\usepackage[hidelinks]{hyperref}
+\usepackage{fancyhdr}
+\usepackage[english]{babel}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{multicol}
+\usepackage[dvipsnames]{xcolor}
+\input{glyphtounicode}
+
+%----------FONT OPTIONS---------- sans-serif
+% \usepackage[sfdefault]{FiraSans}
+% \usepackage[sfdefault]{roboto}
+% \usepackage[sfdefault]{noto-sans}
+% \usepackage[default]{sourcesanspro}
+
+% serif
+% \usepackage{CormorantGaramond}
+% \usepackage{charter}
+
+\pagestyle{fancy}
+\fancyhf{} % clear all header and footer fields
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.5in}
+\addtolength{\evensidemargin}{-0.5in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+%\titleformat{\section}{
+%\vspace{-4pt}\scshape\raggedright\large
+%}{}{0em}{}[\color{black}{\titlerule[0.5pt]} \vspace{-5pt}]
+\titleformat{\section}{
+  \scshape\center\large
+}{}{0em}{}[\color{black}{\titlerule[0pt]}\vspace{0pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+\pdfgentounicode=1
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeSkills}[2]{
+\item{
+    \makebox[4.0cm]{\color{Brown}\textbf{#1} \color{black}\hfill :} #2 \\
+    \rule[7pt]{0.98\textwidth}{0.2pt} \\
+    \vspace{-0.8cm}
+  }
+}
+\newcommand{\resumeItem}[1]{
+\item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
+
+\newcommand{\education}[4]{
+  \vspace{0pt}
+\item{
+    \color{CadetBlue}\textbf{#1}\color{black} \hfill #2 \\
+    \textit{\small#3} \hfill \textit{\small #4} \\
+    \rule[7pt]{0.98\textwidth}{0.2pt} \\
+    \vspace{-1cm}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{0pt}
+\item{
+    \color{teal}\textbf{#1}\color{black} \hfill #2 \\
+    \textit{\small#3} \hfill \textit{\small #4} \\
+    \rule[7pt]{0.98\textwidth}{0.2pt} \\
+    \vspace{-1cm}
+  }
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+\item
+  \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+    \textit{\small#1} & \textit{\small #2} \\
+  \end{tabular*}
+}
+
+\newcommand{\resumeProjectHeading}[3]{
+\item
+  \color{Sepia}\small\textbf{#1} \color{black}$|$ \emph{#2} \hfill #3 \\
+  \rule[7pt]{0.98\textwidth}{0.2pt} \\
+  \vspace{-0.7cm}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{
+\begin{itemize}[leftmargin=0.15in, label={}]}
+    \newcommand{\resumeSubHeadingListEnd}{
+  \end{itemize}}
+\newcommand{\resumeItemListStart}{
+  \begin{multicols}{2}
+  \begin{itemize}[rightmargin=0cm, itemsep=5pt ]}
+      \newcommand{\resumeItemListEnd}{
+    \end{itemize}
+  \end{multicols}
+\vspace{-10pt}}
+
+\newcommand{\resumeCertHeading}[4]{
+\item
+  \color{RoyalBlue}\small\textbf{#1}
+  \color{black} \hfill
+  \makebox[2cm]{\emph{#2} \hfill }
+  $|$
+  \makebox[1.5cm]{#3\hfill}
+  --
+  \makebox[1.5cm]{\hfill#4} \\
+  \rule[7pt]{0.98\textwidth}{0.2pt} \\
+  \vspace{-0.7cm}
+}
+
+%-------------------------------------------
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} &
+% Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
+%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} &
+% Mobile : +1-123-456-7890 \\
+% \end{tabular*}
+
+\begin{center}
+  \textbf{\Huge \scshape Mario Moura} \\ \vspace{1pt}
+  \href{mailto:mariohenriqueneto@gmail.com}{\uline{mariohenriqueneto@gmail.com}}
+  $|$
+  \href{https://www.linkedin.com/in/mario-moura/}{\uline{LinkedIn}}
+  $|$
+  \href{https://github.com/MarioMoura}{\uline{Github}}
+  $|$
+	\href{https://keyserver.ubuntu.com/pks/lookup?search=D2F8E46E0657570B&fingerprint=on&op=index}{\uline{GPG: D2F8E46E0657570B}}
+\end{center}
+
+%-----------EXPERIENCE-----------
+\section{Experience}
+\resumeSubHeadingListStart
+
+\resumeSubheading
+{DevOps Engineer}{Oct 2023 -- Present}
+{Metaltoad}{Portland, Oregon(Remote)}
+\resumeItemListStart
+%\resumeItem{Hardening the security of dozens of CI/CD pipelines by utilizing OAuth-based authentication methods.}
+\resumeItem{Developing automatic CDN cache clearing procedures based on content using headless CMSes.}
+\resumeItem{Handling Automatic issuance of x509 certificates for Akamai and Cloudfront.}
+\resumeItem{Handling multi-stage deployments on Akamai, ensuring proper testing.}
+\resumeItem{Creating templates for secure, quick and reproducible deployment of
+CI/CD pipelines, reducing customer onboarding times.}
+\resumeItem{Implementing distributed deployments of common CMSs, like Wordpress and Craft.}
+\resumeItem{Building from the ground up highly available and
+scalable Nextjs Infrastructure for $\sim$200,000 users.}
+\resumeItem{Making the creation of API endpoints effortless for
+the backend team by using Terraform Modules and OpenAPI.}
+
+\resumeItem{Building a Highly available private registry for
+  common Terraform modules to distribute them across dozens of
+clients.}
+\resumeItem{Handling cache purging strategies for CDNs under considerable load ($\sim$200.000 users) using Akamai and Cloudfront.}
+\resumeItem{Programming multiple scripts to automatically collect
+relevant SOC2 data.}
+\resumeItem{Designing and implementing distributed workloads
+using Docker and ECS.}
+\resumeItem{Reduce operational costs and availability of AWS Elemental Pipelines.}
+\resumeItem{Managing Linux boxes for multiple users to
+collaborate following specific company standards.}
+\resumeItem{Load Testing highly available sites, reaching more
+than 200.000+ users.}
+\resumeItem{Reduced RDS costs for non-production environments by
+49\%.}
+\resumeItem{Configured auto-scaling website to handle major
+climatic event: Hurricane Milton.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Systems Administrator}{Nov 2022 -- Oct 2023}
+{Metaltoad}{Portland, Oregon(Remote)}
+\resumeItemListStart
+% 2.43 -> 1.1 % 183 -> 62
+\resumeItem{Reduced Terraform CI/CD pipeline runtime in 65.5\%,
+  by implementing concurrency. Cutting GitHub Actions cost
+by a significant margin.}
+\resumeItem{Load tested major applications reaching thousands of
+users by leveraging tools like Locust and Jmeter.}
+\resumeItem{Made AWS automations, so management tasks would take
+minutes instead of hours using mainly Bash and Python.}
+\resumeItem{Implemented security measures and policies using AWS
+Security Hub, hardening AWS accounts according SOC2.}
+\resumeItem{Monitoring with AWS CloudWatch, DataDog and Pingdom,
+ensuring $\sim$97\% availability.}
+\resumeItem{Backend development using Python on AWS Lambda
+coupled with API Gateway.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Linux Engineer Intern}{Mar 2020 -- Jul 2020}
+{Museu Paraense Emílio Goeldi}{Belém, PA, Brazil}
+\resumeItemListStart
+\resumeItem{Packaged dozens of biology-related software to Alpine
+Linux.}
+\resumeItem{Built and deployed multiple Docker images, focusing
+on image size.}
+\resumeItemListEnd
+
+\resumeSubheading
+{Systems Administrator}{Jan 2020 -- Dec 2024}
+{Independent Consultant}{Belém, PA, Brazil}
+\resumeItemListStart
+\resumeItem{Bootstrapped WordPress applications for multiple small
+businesses.}
+\resumeItem{Deployed and managed email services using Postfix and
+Dovecot.}
+\vfill
+\resumeItem{Provided consulting work for clients moving to the
+cloud.}
+\resumeItem{Administrated multiple Linux boxes running LAMP
+stacks.}
+\resumeItem{Ensured reliability of Debian/Ubuntu and RedHat Linux instances.}
+\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+\section{Projects}
+\resumeSubHeadingListStart
+\resumeProjectHeading
+{Terraform private registry}{Terraform, MySQL,
+Docker, S3, ECS, Bash}{Sep 2024 -- Present}
+\resumeItemListStart
+\resumeItem{Hosted a highly available version of
+  \underline{\href{https://www.terralist.io/}{Terralist}} to leverage SEMVER in
+Terraform Module distribution.}
+\resumeItem{Developed an automatic CI/CD pipeline for automatic
+module publishing using GitOps and GitHub Actions.}
+\resumeItem{Enabled live patching of Terraform modules for
+subscribed clients.}
+\resumeItem{Enabled more secure module distribution by using
+isolated credentials.}
+\resumeItemListEnd
+
+\resumeProjectHeading {OIDC Terraform Bootstraper}{Bash, Cloudformation, S3, GitHub Actions}{Jun 2023 -- Present}
+\resumeItemListStart
+\resumeItem{Authenticates to AWS without the need for storing hard credentials.}
+\resumeItem{Tool to bootstrap Terraform pipelines securely.}
+\resumeItem{Enables Engineers to quickly onboard new clients.}
+\resumeItem{Enabled the standardization of all pipelines.}
+\resumeItemListEnd
+
+%\resumeProjectHeading {Packit6}{C, Makefile}{Jan 2021 -- Dec 2021}
+%\resumeItemListStart
+%\resumeItem{Tool to build and inject IPv6 packets into the
+%network.}
+%\resumeItem{Enables students to experience first-hand uncommon
+%scenarios in IPv6 networking.}
+%\resumeItem{Allows deep control over protocol headers fields and
+%payloads, serving as a hands-on documentation for protocols.}
+%\resumeItemListEnd
+
+\resumeSubHeadingListEnd
+
+\section{Certifications}
+
+\resumeSubHeadingListStart
+\resumeCertHeading{AWS Security -- Specialist}{Technology}{Mar 2025}{Mar 2027}
+\resumeCertHeading{Terraform Associate (003)}{Technology}{Jun
+2024}{Jun 2026}
+\resumeCertHeading{AWS DevOps Engineer -
+Professional}{Technology}{Apr 2024}{Apr 2027}
+\resumeCertHeading{AWS SysOps Administrator}{Technology}{Aug 2023}{Apr 2027}
+\resumeCertHeading{AWS Cloud Practitioner}{Technology}{Apr
+2023}{Apr 2027}
+\resumeCertHeading{Duolingo English Test 2021}{Language}{Aug
+2021}{Aug 2023}
+\resumeCertHeading{IELTS 7.5 2019}{Language}{Oct 2019}{Oct 2021}
+\resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+\section{Education}
+\resumeSubHeadingListStart
+\education
+{CESUPA}{Belém, PA, Brazil}
+{Bachelor in Computer Science}{Jan.
+2017 -- Jun 2022}
+\education
+{Trend Micro}{São Paulo, São Paulo, Brazil}
+{Certified Program in IT Security}{Sep. 2018 -- Dec. 2018}
+\resumeSubHeadingListEnd
+%\small{
+%\setlength\multicolsep{-1pt}
+%\setlength{\columnsep}{0.25in}
+%\begin{multicols}{3}
+%\begin{itemize}[topsep=0pt,leftmargin=0.30in,
+%label={$\vcenter{\hbox{\tiny$\bullet$}}$} ]
+%\item{AWS DevOps Engineer - Professional}
+%\item{AWS Cloud Practitioner}
+%\item{AWS SysOps Administrator}
+%\item{Terraform Associate (003)}
+%\item{Duolingo English Test 2021}
+%\item{IELTS 7.5 2019}
+%\end{itemize}
+%\end{multicols}
+%}
+%
+%-----------PROGRAMMING SKILLS-----------
+\section{Technical Skills}
+\begin{itemize}[leftmargin=0.15in, label={}]
+    \small{
+      \resumeSkills{Natural
+      Languages}{English(Advanced), Portuguese(Native),
+      French(Intermediate)}
+      \resumeSkills{Languages}{C, Bash, Python, AWK }
+      \resumeSkills{Frameworks}{React,
+        Next.js, WordPress,
+      OpenNext, Drupal}
+      \resumeSkills{CDNs}{Akamai, Cloudfront}
+      \resumeSkills{Developer Tools}{Git,
+        Docker, Vim, Linux,
+      Bash(as my shell) }
+      \resumeSkills{CI/CD}{Github Actions, AWS Code Pipeline, Jenkins}
+      \resumeSkills{Cloud Vendors}{
+        AWS(extensive), GCP(limited),
+      Vultr, Locaweb, DigitalOcean, Linode}
+      \resumeSkills{IaC}{Terraform, CDK, Cloudformation,
+      OpenTofu}
+      %\shiftItem{Test}{test}
+    }
+\end{itemize}
+
+%-------------------------------------------
+\end{document}
