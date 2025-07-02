@@ -1,5 +1,5 @@
 \documentclass[letterpaper,11pt]{article}
-
+\usepackage{etoolbox}
 \usepackage{latexsym}
 \usepackage[empty]{fullpage}
 \usepackage{titlesec}
@@ -7,12 +7,12 @@
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{verbatim}
 \usepackage{enumitem}
-\usepackage[hidelinks]{hyperref}
+\usepackage{hyperref}
 \usepackage{fancyhdr}
 \usepackage[english]{babel}
 \usepackage{tabularx}
 \usepackage[normalem]{ulem}
-\usepackage{multicol}
+%\usepackage{multicol}
 \usepackage[dvipsnames]{xcolor}
 \input{glyphtounicode}
 
@@ -40,6 +40,35 @@
 
 \urlstyle{same}
 
+% Setting the resume to anon mode
+% 0 -> false
+% 1 -> true
+\newcommand{\setanon}{0}
+
+% VARIABLES
+\newcommand{\name}{Mario Moura}
+\newcommand{\mail}{mm@mariomoura.com}
+\newcommand{\linkedin}{linkedin.com/in/mario-moura/}
+\newcommand{\github}{github.com/MarioMoura}
+\newcommand{\gpg}{mariomoura.com/mm.gpg}
+\newcommand{\website}{mariomoura.com}
+
+
+\newrobustcmd*\redactifanon[2]{\ifnumequal{\setanon}{0}{#1}{}\ifnumequal{\setanon}{1}{#2}{}}
+
+\newcommand\showname{\redactifanon{\name}{Anon}}
+\newcommand\showmail{\redactifanon{\mail}{me@example.com}}
+\newcommand\showlinkedin{\redactifanon{\linkedin}{www.linkedin.com}}
+\newcommand\showgithub{\redactifanon{\github}{https://github.com/}}
+\newcommand\showgpg{\redactifanon{\gpg}{https://example.com}}
+
+
+\newcommand{\linkedinp}{\showlinkedin}
+
+\newcommand\showwebsite{\redactifanon{\website}{example.com}}
+
+\newcommand{\expandurl}[2]{\href{https://#1}{\uline{#2}}}
+
 \setlength{\tabcolsep}{0in}
 
 % Sections formatting
@@ -47,7 +76,7 @@
 %\vspace{-4pt}\scshape\raggedright\large
 %}{}{0em}{}[\color{black}{\titlerule[0.5pt]} \vspace{-5pt}]
 \titleformat{\section}{
-  \scshape\center\large
+	\scshape\center\large\vspace{-5pt}
 }{}{0em}{}[\color{black}{\titlerule[0pt]}\vspace{0pt}]
 
 % Ensure that generate pdf is machine readable/ATS parsable
@@ -64,7 +93,7 @@
 }
 \newcommand{\resumeItem}[1]{
 \item\small{
-    {#1 \vspace{-2pt}}
+    {#1}
   }
 }
 
@@ -102,7 +131,7 @@
   \vspace{-0.7cm}
 }
 
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}}
 
 \renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
 
@@ -111,12 +140,10 @@
     \newcommand{\resumeSubHeadingListEnd}{
   \end{itemize}}
 \newcommand{\resumeItemListStart}{
-  \begin{multicols}{2}
-  \begin{itemize}[rightmargin=0cm, itemsep=5pt ]}
+  \begin{itemize}[rightmargin=0cm ]}
       \newcommand{\resumeItemListEnd}{
     \end{itemize}
-  \end{multicols}
-\vspace{-10pt}}
+}
 
 \newcommand{\resumeCertHeading}[4]{
 \item
@@ -137,22 +164,19 @@
 \begin{document}
 
 %----------HEADING----------
-% \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
-%   \textbf{\href{http://sourabhbajaj.com/}{\Large Sourabh Bajaj}} &
-% Email : \href{mailto:sourabh@sourabhbajaj.com}{sourabh@sourabhbajaj.com}\\
-%   \href{http://sourabhbajaj.com/}{http://www.sourabhbajaj.com} &
-% Mobile : +1-123-456-7890 \\
-% \end{tabular*}
-
 \begin{center}
-  \textbf{\Huge \scshape Mario Moura} \\ \vspace{1pt}
-  \href{mailto:mariohenriqueneto@gmail.com}{\uline{mariohenriqueneto@gmail.com}}
-  $|$
-  \href{https://www.linkedin.com/in/mario-moura/}{\uline{LinkedIn}}
-  $|$
-  \href{https://github.com/MarioMoura}{\uline{Github}}
-  $|$
-	\href{https://keyserver.ubuntu.com/pks/lookup?search=D2F8E46E0657570B&fingerprint=on&op=index}{\uline{GPG: D2F8E46E0657570B}}
+	\textbf{\Huge \scshape \showname} \\ \vspace{2pt}
+	\showmail
+	\hspace{1pt} $|$
+	\showlinkedin
+	\hspace{1pt} $|$
+	\showgithub
+\end{center}
+\begin{center}
+	\vspace{-8pt}
+	\showgpg
+	\hspace{1pt} $|$
+	\showwebsite
 \end{center}
 
 %-----------EXPERIENCE-----------
@@ -160,16 +184,15 @@
 \resumeSubHeadingListStart
 
 \resumeSubheading
-{DevOps Engineer}{Oct 2023 -- Present}
-{Metaltoad}{Portland, Oregon(Remote)}
+{DevOps Engineer}{\redactifanon{Oct 2023 -- Present}{Some Time}}
+{\redactifanon{Metaltoad}{Nowhere}}{\redactifanon{ Portland, Oregon (Remote)}{Some city}}
 \resumeItemListStart
 %\resumeItem{Hardening the security of dozens of CI/CD pipelines by utilizing OAuth-based authentication methods.}
+%\resumeItem{Handling multi-stage deployments on Akamai, ensuring proper testing.}
 \resumeItem{Developing automatic CDN cache clearing procedures based on content using headless CMSes.}
 \resumeItem{Handling Automatic issuance of x509 certificates for Akamai and Cloudfront.}
-\resumeItem{Handling multi-stage deployments on Akamai, ensuring proper testing.}
-\resumeItem{Creating templates for secure, quick and reproducible deployment of
-CI/CD pipelines, reducing customer onboarding times.}
 \resumeItem{Implementing distributed deployments of common CMSs, like Wordpress and Craft.}
+\resumeItem{Using Ansible to configure multiple Linux machines, ensuring security and monitoring.}
 \resumeItem{Building from the ground up highly available and
 scalable Nextjs Infrastructure for $\sim$200,000 users.}
 \resumeItem{Making the creation of API endpoints effortless for
@@ -195,10 +218,9 @@ climatic event: Hurricane Milton.}
 \resumeItemListEnd
 
 \resumeSubheading
-{Systems Administrator}{Nov 2022 -- Oct 2023}
-{Metaltoad}{Portland, Oregon(Remote)}
+{Systems Administrator}{\redactifanon{Nov 2022 -- Oct 2023}{Some Time}}
+{\redactifanon{Metaltoad}{Nowhere}}{\redactifanon{ Portland, Oregon (Remote)}{Some city}}
 \resumeItemListStart
-% 2.43 -> 1.1 % 183 -> 62
 \resumeItem{Reduced Terraform CI/CD pipeline runtime in 65.5\%,
   by implementing concurrency. Cutting GitHub Actions cost
 by a significant margin.}
@@ -215,24 +237,13 @@ coupled with API Gateway.}
 \resumeItemListEnd
 
 \resumeSubheading
-{Linux Engineer Intern}{Mar 2020 -- Jul 2020}
-{Museu Paraense Emílio Goeldi}{Belém, PA, Brazil}
-\resumeItemListStart
-\resumeItem{Packaged dozens of biology-related software to Alpine
-Linux.}
-\resumeItem{Built and deployed multiple Docker images, focusing
-on image size.}
-\resumeItemListEnd
-
-\resumeSubheading
-{Systems Administrator}{Jan 2020 -- Dec 2024}
-{Independent Consultant}{Belém, PA, Brazil}
+{Systems Administrator}{\redactifanon{Jan 2020 -- Dec 2024}{Some Time}}
+{Independent Consultant}{\redactifanon{Belém, PA, Brazil}{Some city}}
 \resumeItemListStart
 \resumeItem{Bootstrapped WordPress applications for multiple small
 businesses.}
 \resumeItem{Deployed and managed email services using Postfix and
 Dovecot.}
-\vfill
 \resumeItem{Provided consulting work for clients moving to the
 cloud.}
 \resumeItem{Administrated multiple Linux boxes running LAMP
@@ -300,12 +311,9 @@ Professional}{Technology}{Apr 2024}{Apr 2027}
 \section{Education}
 \resumeSubHeadingListStart
 \education
-{CESUPA}{Belém, PA, Brazil}
+{\redactifanon{CESUPA}{Some college}}{\redactifanon{Belém, PA, Brazil}{Some city}}
 {Bachelor in Computer Science}{Jan.
 2017 -- Jun 2022}
-\education
-{Trend Micro}{São Paulo, São Paulo, Brazil}
-{Certified Program in IT Security}{Sep. 2018 -- Dec. 2018}
 \resumeSubHeadingListEnd
 %\small{
 %\setlength\multicolsep{-1pt}
@@ -330,21 +338,20 @@ Professional}{Technology}{Apr 2024}{Apr 2027}
       \resumeSkills{Natural
       Languages}{English(Advanced), Portuguese(Native),
       French(Intermediate)}
-      \resumeSkills{Languages}{C, Bash, Python, AWK }
+      \resumeSkills{Languages}{C, Bash, Python, AWK, YAML, HCL}
       \resumeSkills{Frameworks}{React,
         Next.js, WordPress,
-      OpenNext, Drupal}
+      OpenNext, Discourse, \LaTeX, Hugo}
       \resumeSkills{CDNs}{Akamai, Cloudfront}
       \resumeSkills{Developer Tools}{Git,
         Docker, Vim, Linux,
       Bash(as my shell) }
-      \resumeSkills{CI/CD}{Github Actions, AWS Code Pipeline, Jenkins}
-      \resumeSkills{Cloud Vendors}{
-        AWS(extensive), GCP(limited),
+      \resumeSkills{CI/CD}{Github Actions, AWS Code Pipeline}
+      \resumeSkills{Cloud Vendors}{AWS(extensive), GCP(limited),
       Vultr, Locaweb, DigitalOcean, Linode}
       \resumeSkills{IaC}{Terraform, CDK, Cloudformation,
-      OpenTofu}
-      %\shiftItem{Test}{test}
+      OpenTofu, Ansible, Packer}
+      \resumeSkills{Other}{Grafana, Loki, Prometheus, Nginx, Promtail}
     }
 \end{itemize}
 
